@@ -12,7 +12,11 @@ else
     echo "invalid file type requested"
 fi
 
+mkdir $2
+cd $2
+
 touch $2.txt
-cp $type.java tmp
+cp ../$type.java tmp
 cat tmp | sed -e "s/$type/$2/g" > $2.java
 rm tmp
+code .
